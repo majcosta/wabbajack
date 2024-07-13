@@ -13,7 +13,7 @@ public class DTOSerializer
 
     public DTOSerializer(IEnumerable<JsonConverter> converters)
     {
-        Options = new JsonSerializerOptions();
+        Options = new JsonSerializerOptions{ WriteIndented = true };
         Options.NumberHandling = JsonNumberHandling.AllowReadingFromString;
         foreach (var c in converters) Options.Converters.Add(c);
     }
